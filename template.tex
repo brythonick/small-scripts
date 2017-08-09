@@ -1,0 +1,120 @@
+\documentclass[11pt,a4paper]{article}
+%TC:group tabular 1 1
+
+% If generated from template: Check each section for commented lines when customising.
+
+%=================%
+% P A C K A G E S %
+%=================%
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{url}                     % <- So URLs in the references can be displayed.
+\usepackage[margin=3cm]{geometry}
+\usepackage[parfill]{parskip}        % <- Vertical space and no indentation for paragraphs.
+\usepackage{float}                   % <- Better control over position of float objects.
+\usepackage{caption}                 % <- For images with a simple label as caption, no description.
+\usepackage{pdflscape}               % <- Change the orientation for one page in PDF output.
+\usepackage{array}                   % <- Need this for the 'm' column in table. To set vertical align to middle.
+\usepackage{setspace}
+\usepackage[hidelinks,pdfpagelabels=false]{hyperref}
+\usepackage{pdfpages}
+\usepackage[toc,page]{appendix}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+%\usepackage{xcolor}           % <- Coloured cells in tables.
+
+\renewcommand{\familydefault}{\sfdefault}		% <- Set the document font to sans-serif.
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\lhead{\leftmark}	% <- Left header
+%\rhead{}			% <- Right header
+%\lfoot{Thesis}		% <- Left footer
+%\rfoot{\thepage}	% <- Right footer
+\cfoot{\thepage}		% <- Centre footer
+\renewcommand{\headrulewidth}{0.4pt} % <- Horizontal line
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+
+%=====================%
+% T I T L E   P A G E %
+%=====================%
+\begin{titlepage}
+\centering
+%\includegraphics[width=0.15\textwidth]{}\par\vspace{1cm} % <- Logo?
+{\Large\itshape NAME\par}
+\vspace{1cm}
+{\Large EXTRA\par}
+\vspace{1cm}
+{\Large\bfseries REPORT TITLE\par}
+\vspace{0.5cm}
+%{\Large \par}\vspace{2cm}
+%\includegraphics[scale=0.3]{./images/placeholder.png}\par % <- Cover image?
+\vfill
+% Bottom of the page
+{\large \today\par}
+\end{titlepage}
+
+
+%===================================%
+% E X E C U T I V E   S U M M A R Y %
+%===================================%
+\pagenumbering{gobble}
+\thispagestyle{plain}
+\section*{Executive Summary}
+
+\begin{description}
+\item[Site Name]{}
+\item[Grid Reference]{}
+\item[Postcode]{}
+\item[Date of Survey]{}
+\end{description}
+
+\vspace{1cm}
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{| m{3cm} | m{11.5cm} |}
+% TODO: EXEC SUMMARY GOES HERE
+\end{tabular}
+\egroup
+
+\newpage
+
+
+%======================================%
+% C O N T E N T  S   A N D   L I S T S %
+%======================================%
+\pagenumbering{roman}	%<- Removed due to page numbers in the footer.
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+\pagenumbering{arabic}
+\onehalfspacing
+
+
+%=================%
+% S E C T I O N S %
+%=================%
+%\input{./sections/section_title.tex}
+
+
+%=====================%
+% R E F E R E N C E S %
+%=====================%
+%\newpage
+%\singlespacing
+%\bibliography{PATH TO BIB GOES HERE}
+%\bibliographystyle{plainnat}	% <- May need to edit this style to be compatible
+
+
+%=================%
+% A P P E N D I X %
+%=================%
+\newpage
+\begin{appendices}
+
+\end{appendices}
+
+\end{document}
