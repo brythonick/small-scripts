@@ -4,7 +4,7 @@
 
 total_count=0
 
-for section_name in `ls sections`; do
+for section_name in `ls sections | grep .tex`; do
 	section_count=`texcount sections/$section_name | awk '/Words in text/ {print $4}'`
 	((total_count += section_count))
 	echo "$section_name: $section_count"
